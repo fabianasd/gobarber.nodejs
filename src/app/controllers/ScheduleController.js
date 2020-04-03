@@ -1,4 +1,4 @@
-import { startOfDay, rndOfDay, parseISO } from 'date-fns';
+import { startOfDay, endOfDay, parseISO } from 'date-fns';
 
 import User from '../models/User';
 import Appointment from '../models/Appointment';
@@ -14,6 +14,7 @@ class ScheduleController {
     }
 
     const { date } = req.query;
+    const parsedDate = parseISO(date);
 
     // 2020-05-01T00:00:00
     // 2020-05-01T23:59:59
