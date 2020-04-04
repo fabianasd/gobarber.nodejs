@@ -89,7 +89,7 @@ docker help
 docker run --name database -e POSTGRES_PASSWORD=xxxxxx -p 0000:0000 -d postgres
 ```
 
-16 verificar o container que estão executando
+16 verificar os containers que estão executando
 ```
 docker ps
 ```
@@ -99,10 +99,10 @@ docker ps
 docker stop ('names' que deseja parar). EX.: docker stop database
 ```
 
-18 Instalar o PostBird: https://www.electronjs.org/apps/postbird e faca a instalação conforme sistema usado. Depois abre o PostBird e faz a conexão.
+18 Instalar o PostBird: https://www.electronjs.org/apps/postbird e faça a instalação conforme sistema usado. Depois abre o PostBird e faz a conexão.
 
 
-19 verifica todos os containers que estão na máquina mesmo aqueles que nao estao rodando
+19 verifica todos os containers que estão na máquina mesmo aqueles que não estão rodando
 ```
 docker ps -a
 ```
@@ -225,7 +225,6 @@ module.exports = {
 yarn add pg pg-hstore
 ```
 
-```
 35 Criar o arquivo dentro da pasta migration do projeto
 ```
 yarn sequelize migration:create --name=create-users
@@ -236,7 +235,6 @@ yarn sequelize migration:create --name=create-users
 yarn sequelize db:migrate
 ```
 
-```
 37 Desfaz a última migration
 ```
 yarn sequelize db:migrate:undo
@@ -281,3 +279,15 @@ yarn add multer
 ```
 yarn add date-fns@next
 ```
+
+46 Subir um container rodando a imagem do mongodb
+```
+docker run --name mongobarber -p 27017:27017 -d -t mongo
+```
+
+47 Banco de Dados para o mongodb
+```
+yarn add mongoose
+```
+
+48
