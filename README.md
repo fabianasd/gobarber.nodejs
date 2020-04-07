@@ -1,4 +1,4 @@
-1 Cria o projeto no Visual Studio e no terminal executa o comando abaixo para criar o arquivo package.json:
+1 Criar o arquivo package.json:
 ```
 yarn init
 ```
@@ -13,17 +13,17 @@ yarn add express
 node src/server.js
 ```
 
-4 Para utilizar a sintaxe import:
+4 Utilizar a sintaxe import:
 ```
 yarn add sucrase nodemon -D
 ```
 
-5 comando para executar após as alterações de da palavra 'const' para 'import'
+5 Permitir a substituição da palavra 'const' para 'import'
 ```
 yarn sucrase-node src/app.js
 ```
 
-6 No arquivo package.json acrescente:
+6 No arquivo package.json acrescentar:
 ```
 "scripts": {
    "dev": "nodemon src/server.js",
@@ -31,7 +31,7 @@ yarn sucrase-node src/app.js
 
 ```
 
-7 cria um arquivo "nodemon.json" e arruma o código abaixo:
+7 Criar um arquivo "nodemon.json" e arrumar o código abaixo:
 ```
 {
  "execMap": {
@@ -40,17 +40,17 @@ yarn sucrase-node src/app.js
 }
 ```
 
-8 No arquivo package.json acrescente em scripts:
+8 No arquivo package.json acrescentar em scripts:
 ```
 "dev:debug": "nodemon --inspect src/server.js"
 ```
 
-9 Roda no terminal:
+9 Rodar no terminal:
 ```
 yarn dev:debug
 ```
 
-10 Vai na aba de debug, abre o add configuration (create launch.json) e edite:
+10 Na aba de debug, abre o add configuration (create launch.json) e edite:
 ```
 {
  // Use IntelliSense to learn about possible attributes.
@@ -70,21 +70,27 @@ yarn dev:debug
 }
 ```
 
-11 instalar o docker: acesse o site (https://docs.docker.com/install/) e faca a instalacao conforme sistema usado.
+11 Instalar o docker pelo site e fazer a instalacao conforme sistema usado.
+```
+https://docs.docker.com/install/)
+```
 
-12 verificar a versão do docker
+12 Verificar a versão do docker
 ```
 docker -v
 ```
 
-13 verificar os comandos disponíveis no docker
+13 Verificar os comandos disponíveis no docker
 ```
 docker help
 ```
 
-14 instalar o Postgres: acesse o site (https://hub.docker.com/_/postgres) e faca a instalacao conforme sistema usado.
+14 Instalar o Postgres pelo site abaixo e fazer a instalacao conforme sistema usado.
+```
+https://hub.docker.com/_/postgres
+```
 
-15 configurando os POSTGRES
+15 Configurar os POSTGRES
 ```
 docker run --name database -e POSTGRES_PASSWORD=xxxxxx -p 0000:0000 -d postgres
 ```
@@ -99,10 +105,12 @@ docker ps
 docker stop ('names' que deseja parar). EX.: docker stop database
 ```
 
-18 Instalar o PostBird: https://www.electronjs.org/apps/postbird e faça a instalação conforme sistema usado. Depois abre o PostBird e faz a conexão.
+18 Instalar o Postbird pelo link abaixo e fazer a instalação conforme sistema usado. Depois abrir o Postbird e faz a conexão.
+```
+https://www.electronjs.org/apps/postbird
+```
 
-
-19 verifica todos os containers que estão na máquina mesmo aqueles que não estão rodando
+19 Verificar todos os containers que estão na máquina mesmo aqueles que não estão rodando
 ```
 docker ps -a
 ```
@@ -112,7 +120,7 @@ docker ps -a
 docker start ('names' que deseja reiniciar). EX.: docker start database
 ```
 
-21 Se der algum erro, verifique o container através do comando:
+21 Se der algum erro, verificar o container através do comando:
 ```
 docker logs ('names' que deseja reiniciar). EX.: docker logs database
 ```
@@ -128,7 +136,8 @@ yarn add eslint
 yarn eslint --init
 ```
 
-24 Seleciona conforme descrito abaixo:
+24 Para configurar o eslint
+```
 ? How would you like to use ESLint? To check syntax, find problems, and enforce code style
 ? What type of modules does your project use? JavaScript modules (import/export)
 ? Which framework does your project use? None of these
@@ -137,13 +146,14 @@ yarn eslint --init
 ? How would you like to define a style for your project? Use a popular style guide
 ? Which style guide do you want to follow? Airbnb: https://github.com/airbnb/javascript
 ? What format do you want your config file to be in? JavaScript
+```
 
-25 deleta a pasta gerada (package-lock.json) e executa:
+25 Deletar a pasta gerada (package-lock.json) e executar:
 ```
 yarn
 ```
 
-26 abra os arquivos de configuração (ctrl+P) (settings.js) e adicione:
+26 Abrir os arquivos de configuração (ctrl+P) (settings.js) e adicionar:
 ```
 "[javascript]": {
        "editor.codeActionsOnSave": {
@@ -158,7 +168,7 @@ yarn
    },
 ```
 
-26 no arquivo eslintrc.js, adicione:
+26 No arquivo eslintrc.js, adicionar:
 ```
  rules: {
    "prettier/prettier": "error", / quando achar um erro retornar uma mensagem
@@ -174,13 +184,13 @@ yarn
 yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
 ```
 
-28 acrescenta no arquivo eslintrc.js:
+28 Acrescentar no arquivo eslintrc.js:
 ```
 extends: [ 'airbnb-base', 'prettier' ], / somente a palavra 'prettier' e transforma para array
 plugins: [ 'prettier' ],
 ```
 
-29 cria um arquivo .prettierrc (escolhe a linguagem JSON), e escreve:
+29 Criar um arquivo .prettierrc (escolhe a linguagem JSON), e escrever:
 ```
 {
  "singleQuote": true, / vai permitir o uso de aspas simples
@@ -188,12 +198,12 @@ plugins: [ 'prettier' ],
 }
 ```
 
-30 atualiza automaticamente os arquivos com erro ( a palavra src se refere a pasta que quero corrigir)
+30 Atualizar automaticamente os arquivos com erro ( a palavra src se refere a pasta que quero corrigir)
 ```
 yarn eslint --fix src --ext .js
 ```
 
-31 caso tenha outros desenvolvedores e estes utilizem outras ferramentas de desenvolvimento adicione a extensão 'EditorConfig for VS Code`,
+31 Caso tenha outros desenvolvedores e estes utilizem outras ferramentas de desenvolvimento adicione a extensão 'EditorConfig for VS Code`,
 volte ao explorer (menu de pastas) e clique com o botão direito do mouse e add 'Generate .editorconfig', e altere as linhas:
 ```
 trim_trailing_whitespace = true / antes estava false
@@ -208,7 +218,7 @@ yarn add sequelize
 yarn add sequelize-cli -D
 ```
 
-33 cria um arquivo .sequelizerc (escolhe a linguagem JAVASCRITP) e escreve:
+33 Criar um arquivo .sequelizerc (escolhe a linguagem JAVASCRITP) e escrever:
 ```
 const { resolve } = require('path');
 
@@ -250,12 +260,12 @@ yarn sequelize db:migrate:undo:all
 yarn add bcryptjs
 ```
 
-40 extensão que gera o token JWT
+40 Extensão que gera o token JWT
 ```
 yarn add jsonwebtoken
 ```
 
-41 biblioteca de validação
+41 Biblioteca de validação
 ```
 yarn add yup
 ```
@@ -290,4 +300,22 @@ docker run --name mongobarber -p 27017:27017 -d -t mongo
 yarn add mongoose
 ```
 
-48
+48 Baixar o mongodb
+```
+https://www.mongodb.com/products/compass
+```
+
+49 Biblioteca utilizada para envio de email
+```
+yarn add nodemailer
+```
+
+50 Link para acessar e saber mais sobre handlebars
+```
+https://handlebarsjs.com/
+```
+
+51 Extensão que permite utilizar um template engine
+```
+yarn add express-handlebars nodemailer-express-handlebars
+```
