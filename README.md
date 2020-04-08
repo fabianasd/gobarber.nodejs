@@ -319,3 +319,25 @@ https://handlebarsjs.com/
 ```
 yarn add express-handlebars nodemailer-express-handlebars
 ```
+
+52 Criar o Redis
+```
+docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
+```
+
+53 Instalar o bee-queue (ferramenta de fila dentro do node)
+```
+yarn add bee-queue
+```
+54 Para rodar a fila
+```
+node src/queue.js
+```
+```
+no arquivo package.json: "queue": "nodemon src/queue.js"
+```
+```
+yarn queue
+```
+
+
