@@ -340,4 +340,23 @@ no arquivo package.json: "queue": "nodemon src/queue.js"
 yarn queue
 ```
 
+55 Instalar o sentry.io
+```
+yarn add @sentry/node@5.15.4
+```
+
+56 Extensão que permite reconhecer os erros quando utiliza-se 'async'
+```
+yarn add express-async-errors
+```
+
+57 Fazer a tratativa das mensagens de erro, para dar uma visualização melhor para os desenvolvedores
+```
+yarn add youch
+```
+
+58 Carregar as variáveis de ambiente na aplicação
+```
+yarn add dotenv
+```
 
